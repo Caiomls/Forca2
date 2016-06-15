@@ -22,7 +22,7 @@ lista_dificil = ['procrastinar', 'prolegomenos', 'vicissitudes', 'pernostico', '
 'chistoso', 'acrimonia', 'combustivel', 'concurso', 'protesto', 'governo', 'paquiderme', 'tamandare']
 
 #--------------------------------FUNÇÕES------------------------------------------#
-def carregar_jogo()
+def carregar_jogo():
     try:
         arquivo = open(jogo_salvo,'rb')
         save = pickle.load(arquivo)
@@ -32,11 +32,11 @@ def carregar_jogo()
         pass
     return save
     
-def salvar_jogo(lista, sorteadas, l_usadas, l_corretas, palavra, pontuacao):
-    mapa_save = {lista, sorteadas, l_usdas, l_corretas, palavra, pontuacao}
+def salvar_jogo(lista, sorteadas, l_usadas, l_corretas, palavra, pontuacao, joao):
+    mapa_save = {_lista:lista, _sorteadas:sorteadas, _l_usadas:l_usdas, _l_corretas:l_corretas, _palavra:palavra, _pontuacao:pontuacao, _joao:joao}
     try:
         arquivo = open(jogo_salvo, 'wb')
-        pickle.dupm(mapa_save, arquivo)
+        pickle.dump(mapa_save, arquivo)
         arquivo.close
     except:
         pass
